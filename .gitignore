@@ -51,7 +51,11 @@ fabric.properties
 .idea/
 .idea/*.*
 .idea/workspace.xml
-app/config/parameters.yml
 var/cache/
 var/logs/
 
+
+# Parameters
+app/config/parameters.yml
+app/config/parameters.ini
+app/config/*.*
