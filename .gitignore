@@ -51,7 +51,11 @@ fabric.properties
 .idea/
 .idea/*.*
 .idea/workspace.xml
-app/config/parameters.yml
-var/cache/
-var/logs/
 
+# Symfony
+app/bootstrap.php.cache
+app/bootstrap_cache.php.cache
+app/config/parameters.ini
+app/config/parameters.yml
+app/cache/*
+app/logs/*
