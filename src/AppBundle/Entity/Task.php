@@ -25,17 +25,29 @@ class Task
      * @ORM\Column(type="integer")
      */
     private $id;
-    /* @ORM\Column(name="description", type="string") */
+
+    /**
+     * @ORM\Column(name="description", type="string")
+     */
     private $description;
-    /* @ORM\Column(name="created_at", type="datetime") */
+
+    /**
+     * @ORM\Column(name="created_at", type="datetime")
+     */
     private $created_at;
-    /* @ORM\Column(name="updated_at", type="datetime") */
+
+    /**
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
     private $updated_at;
+
     /**
      * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="Subtask", mappedBy="parent_task")
      */
     private $sub_tasks;
+
+
     public function __construct()
     {
         $this->sub_tasks = new ArrayCollection();

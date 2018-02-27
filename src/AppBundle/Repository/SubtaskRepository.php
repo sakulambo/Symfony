@@ -1,15 +1,15 @@
 <?php
 /**
  * Created by IntelliJ IDEA.
- * User: Nestor
+ * User: Kevin
  * Date: 27/02/2018
- * Time: 16:40
+ * Time: 16:58
  */
 
 namespace AppBundle\Repository;
 
 
-class UserRepositoy extends BaseRepository
+class SubtaskRepository extends BaseRepository
 {
 
 }

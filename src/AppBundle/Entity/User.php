@@ -25,10 +25,16 @@ class User
      * @ORM\Column(type="integer")
      */
     private $id;
-    /* @ORM\Column(name="name", type="string") */
+
+    /**
+     * @ORM\Column(name="name", type="string")
+     */
     private $name;
-    /* @ORM\Column(name="age", type="integer") */
+    /**
+     * @ORM\Column(name="age", type="integer")
+     */
     private $edad;
+
     /**
      * @var ArrayCollection
      *
@@ -44,9 +50,14 @@ class User
      * )
      */
     private $subtasks;
-    /* @ORM\Column(name="created_at", type="datetime") */
+    /**
+     * @ORM\Column(name="created_at", type="datetime")
+     */
     private $created_at;
-    /* @ORM\Column(name="updated_at", type="datetime") */
+
+    /**
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
     private $updated_at;
 
     /**

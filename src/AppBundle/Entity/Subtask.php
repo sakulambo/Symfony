@@ -31,13 +31,21 @@ class Subtask
     private $users;
     /**
      * @ORM\ManyToOne(targetEntity="Task", inversedBy="sub_task")
-     **/
+     */
     private $parent_task;
-    /* @ORM\Column(name="description", type="string") */
+
+    /**
+     * @ORM\Column(name="description", type="string")
+     */
     private $desciption;
-    /* @ORM\Column(name="created_at", type="datetime") */
+
+    /**
+     * @ORM\Column(name="created_at", type="datetime")
+     */
     private $created_at;
-    /* @ORM\Column(name="updated_at", type="datetime") */
+    /**
+     * @ORM\Column(name="updated_at", type="datetime")
+     */
     private $updated_at;
 
     /**
