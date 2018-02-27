@@ -51,5 +51,7 @@ fabric.properties
 .idea/
 .idea/*.*
 .idea/workspace.xml
-app/config/
+app/config
+var/cache
+var/logs
 
