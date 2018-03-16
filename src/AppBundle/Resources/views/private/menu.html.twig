@@ -1,0 +1,37 @@
+<div class="navbar nav_title" style="border: 0;">
+    <a href="{{ path('homepage') }}" class="site_title">Gestor de projectes</a>
+</div>
+<div class="clearfix"></div>
+<!-- sidebar menu -->
+<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
+    <div class="menu_section">
+        <ul class="nav side-menu">
+            <li><a><i class="fa fa-user"></i> User <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('user_index') }}">List</a></li>
+                    <li><a href="{{ path('user_new') }}">Insert</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-tasks"></i> Task <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('task_index') }}">List</a></li>
+                    <li><a href="{{ path('task_new') }}">Insert</a></li>
+                </ul>
+            </li>
+            <li><a><i class="fa fa-thumb-tack"></i> Subtask <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('subtask_index') }}">List</a></li>
+                    <li><a href="{{ path('subtask_new') }}">Insert</a></li>
+                </ul>
+            </li>
+            <li class="x_title"></li>
+            <li><a><i class="fa fa-plus-square"></i> Actions <span class="fa fa-chevron-down"></span></a>
+                <ul class="nav child_menu">
+                    <li><a href="{{ path('userhastaskandsubtask_index') }}">List User's Task</a></li>
+                    <li><a href="{{ path('userhastaskandsubtask_new') }}">Assign User's Task</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- /sidebar menu -->

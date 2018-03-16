@@ -1,0 +1,36 @@
+{% extends '@App/base_private.html.twig' %}
+{% block body %}
+  <html>
+  <body class="nav-md">
+    <div class="container body">
+      <div class="main_container">
+        <!-- page content -->
+        <div class="col-md-12">
+          <div class="col-middle">
+            <div class="text-center">
+              <h1 class="error-number">500</h1>
+              <h2>Internal Server Error</h2>
+              <p>We track these errors automatically, but if the problem persists feel free to contact us. In the meantime, try refreshing.
+              </p>
+              <p><a href="{{ path('homepage') }}">Go back.</a></p>
+            </div>
+          </div>
+        </div>
+        <!-- /page content -->
+      </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="{{ asset('vendor/echarts/test/lib/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('vendor/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('vendor/fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ asset('vendor/nprogress/nprogress.js') }}"></script>
+
+    <!-- Custom Theme Scripts -->
+    <script src="{{ asset('js/custom.min.js') }}"></script>
+  </body>
+  </html>
+{% endblock %}

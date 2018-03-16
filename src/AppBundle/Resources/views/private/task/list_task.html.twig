@@ -1,0 +1,136 @@
+{% extends '@App/base_private.html.twig' %}
+{% block body %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <body class="nav-md">
+    <div class="container body">
+        <div class="main_container">
+            <div class="col-md-3 left_col">
+                <div class="left_col scroll-view">
+                    {{ include('@App/private/menu.html.twig') }}
+                </div>
+            </div>
+            {{ include('@App/private/top_navigation.html.twig') }}
+            <!-- page content -->
+            <div class="right_col" role="main">
+                <div class="">
+                    <div class="page-title">
+                        <div class="title_left">
+                            <h3>List of Tasks</h3>
+                        </div>
+                        <div class="title_right">
+                            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                                <div class="input-group">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="row">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="x_panel">
+                                    <div class="x_content">
+                                        <table id="datatable" class="table table-striped table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Id</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                                <th class="col-md-2">Actions</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for task in tasks %}
+                                                <tr>
+                                                    <td>{{ task.id }} </td>
+                                                    <td>{{ task.name }}</td>
+                                                    <td>{{ task.description }}</td>
+                                                    <td style=" padding: 5px 5px 5px 5px;">
+                                                        <div class="col-md-12">
+                                                            <button type="submit" class="col-md-6 button_edit"><a style="text-decoration: none;color: #ffffff;" href="{{ path('task_edit',{'id': task.id })}}">Edit</a></button>
+                                                            <button type="button" class="col-md-6 col-md-push-1 button_delete" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#myModal"  data-client-id-url="{{ path('task_delete',{'id': task.id })}}">Delete</button>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /page content -->
+
+    <!--modal-->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Delete Task</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete task permantly?</p>
+                </div>
+                <div class="modal-footer text-right">
+                    <button style="float: right;" type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <form style="float: right;" id="formConfirmDelete" action="">
+                        <button  type="submit" class="btn btn-primary" id="confirmButton">Yes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--/modal-->
+
+
+    <!-- footer content -->
+    <footer>
+        <div class="pull-right">
+            Gestor de Projectes - All rights are reserved by <b>Kevin Garcia</b> & <b>Nestor Ibañez</b>
+        </div>
+        <div class="clearfix"></div>
+    </footer>
+    <!-- /footer content -->
+
+    <!-- jQuery -->
+    <script src="{{ asset('vendor/jquery/dist/jquery.min.js') }}"></script>
+    <!-- Bootstrap -->
+    <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+    <!-- FastClick -->
+    <script src="{{ asset('vendor/fastclick/lib/fastclick.js') }}"></script>
+    <!-- NProgress -->
+    <script src="{{ asset('vendor/nprogress/nprogress.js') }}"></script>
+    <!-- iCheck -->
+    <script src="{{ asset('vendor/iCheck/icheck.min.js') }}"></script>
+    <!-- Datatables -->
+    <script src="{{ asset('vendor/datatables.net/js/jquery.dataTables.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-buttons/js/dataTables.buttons.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-buttons-bs/js/buttons.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-buttons/js/buttons.flash.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-buttons/js/buttons.html5.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-buttons/js/buttons.print.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-keytable/js/dataTables.keyTable.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-responsive/js/dataTables.responsive.min.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js') }}"></script>
+    <script src="{{ asset('vendor/datatables.net-scroller/js/dataTables.scroller.min.js') }}"></script>
+    <script src="{{ asset('vendor/jszip/dist/jszip.min.js') }}"></script>
+    <script src="{{ asset('vendor/pdfmake/build/pdfmake.min.js') }}"></script>
+    <script src="{{ asset('vendor/pdfmake/build/vfs_fonts.js') }}"></script>
+    {#<script src="{{ asset('vendor/bootstrap-notify/bootstrap-notify.min.js') }}"></script>#}
+    {#<script src="{{ asset('vendor/bootstrap-growl-master/jquery.bootstrap-growl.min.js') }}"></script>#}
+
+    <!-- Custom Theme Scripts -->
+    <script src="{{ asset('js/custom.min.js') }}"></script>
+
+    </body>
+    </html>
+
+{% endblock %}
