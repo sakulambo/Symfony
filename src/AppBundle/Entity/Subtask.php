@@ -7,8 +7,10 @@
  */
 
 namespace AppBundle\Entity;
+
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+
 /**
  * Class Subtask
  * @package AppBundle\Entity
@@ -23,21 +25,22 @@ class Subtask
      * @ORM\Column(type="integer")
      */
     private $id;
+
     /**
-     * @var ArrayCollection
-     *
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="subtasks")
+     * @ORM\Column(name="name", type="string")
      */
-    private $users;
+    private $name;
+
     /**
      * @ORM\ManyToOne(targetEntity="Task", inversedBy="sub_task")
+     *  @ORM\JoinColumn(name="task_id", referencedColumnName="id", nullable=false)
      */
-    private $parent_task;
+    private $main_task;
 
     /**
      * @ORM\Column(name="description", type="string")
      */
-    private $desciption;
+    private $description;
 
     /**
      * @ORM\Column(name="created_at", type="datetime")
@@ -53,24 +56,7 @@ class Subtask
      */
     public function __construct()
     {
-        $this->users = new ArrayCollection();
-    }
 
-
-    /**
-     * @return mixed
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-    /**
-     * @param mixed $users
-     */
-    public function setUsers($users)
-    {
-        $this->users = $users;
     }
 
     /**
@@ -92,33 +78,49 @@ class Subtask
     /**
      * @return mixed
      */
-    public function getParentTask()
+    public function getName()
     {
-        return $this->parent_task;
+        return $this->name;
     }
 
     /**
-     * @param mixed $parent_task
+     * @param mixed $name
      */
-    public function setParentTask($parent_task)
+    public function setName($name)
     {
-        $this->parent_task = $parent_task;
+        $this->name = $name;
     }
 
     /**
      * @return mixed
      */
-    public function getDesciption()
+    public function getMainTask()
     {
-        return $this->desciption;
+        return $this->main_task;
     }
 
     /**
-     * @param mixed $desciption
+     * @param mixed $main_task
      */
-    public function setDesciption($desciption)
+    public function setMainTask($main_task)
     {
-        $this->desciption = $desciption;
+        $this->main_task = $main_task;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
     }
 
     /**

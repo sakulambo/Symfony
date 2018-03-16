@@ -36,21 +36,6 @@ class User
     private $edad;
 
     /**
-     * @var ArrayCollection
-     *
-     * @ORM\ManyToMany(targetEntity="Subtask", inversedBy="users")
-     * @ORM\JoinTable(
-     *  name="user_has_subtask",
-     *  joinColumns={
-     *      @ORM\JoinColumn(name="user_id", referencedColumnName="id")
-     *  },
-     *  inverseJoinColumns={
-     *      @ORM\JoinColumn(name="subtask_id", referencedColumnName="id")
-     *  }
-     * )
-     */
-    private $subtasks;
-    /**
      * @ORM\Column(name="created_at", type="datetime")
      */
     private $created_at;
@@ -60,29 +45,6 @@ class User
      */
     private $updated_at;
 
-    /**
-     * User constructor.
-     */
-    public function __construct()
-    {
-        $this->subtasks = new ArrayCollection();
-    }
-
-    /**
-     * @return ArrayCollection
-     */
-    public function getSubtasks()
-    {
-        return $this->subtasks;
-    }
-
-    /**
-     * @param ArrayCollection $subtasks
-     */
-    public function setSubtasks($subtasks)
-    {
-        $this->subtasks = $subtasks;
-    }
 
 
     /**

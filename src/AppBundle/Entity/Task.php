@@ -27,27 +27,39 @@ class Task
     private $id;
 
     /**
+     * @ORM\Column(name="name", type="string")
+     */
+    private $name;
+
+    /**
      * @ORM\Column(name="description", type="string")
      */
     private $description;
 
     /**
-     * @ORM\Column(name="created_at", type="datetime")
+     *  @var \DateTime
+     *
+     * @ORM\Column(name="created_at", type="datetime",nullable=false)
      */
     private $created_at;
 
     /**
-     * @ORM\Column(name="updated_at", type="datetime")
+     *  @var \DateTime
+     *
+     * @ORM\Column(name="updated_at", type="datetime",nullable=false)
      */
     private $updated_at;
 
     /**
      * @var ArrayCollection
-     * @ORM\OneToMany(targetEntity="Subtask", mappedBy="parent_task")
+     * @ORM\OneToMany(targetEntity="Subtask", mappedBy="main_task")
      */
     private $sub_tasks;
 
 
+    /**
+     * Task constructor.
+     */
     public function __construct()
     {
         $this->sub_tasks = new ArrayCollection();
@@ -69,6 +81,21 @@ class Task
         $this->id = $id;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
 
     /**
      * @return mixed
@@ -137,13 +164,11 @@ class Task
      * @ORM\PrePersist
      * @ORM\PreUpdate
      */
-    public function prePersist()
+    public function updatedTimestamps()
     {
-        if (!$this->getCreatedAt()) {
-            $this->created_at = new \DateTime();
-        }
-        if (!$this->getUpdatedAt()) {
-            $this->updated_at = new \DateTime();
+        $this->setUpdatedAt(new \DateTime('now'));
+        if ($this->getCreatedAt() == null) {
+            $this->setCreatedAt(new \DateTime('now'));
         }
     }
 }
