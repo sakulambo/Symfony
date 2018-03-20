@@ -62,3 +62,16 @@ app/logs/*
 var/cache/*
 var/logs/*
 
+var/sessions/prod/sess_1klt454dn4qlkudrsho9qc6bc6
+var/sessions/dev/sess_u9bbt6oc7epufet3s1v96hgiq0
+var/sessions/dev/sess_p8q330omf3oig1fuerq8dhnnj5
+var/sessions/dev/sess_o278por2nd2hj44dc1c2j0e3j7
+var/sessions/dev/sess_md31k1j0mvm9ogc0gq9f233222
+var/sessions/dev/sess_1klt454dn4qlkudrsho9qc6bc6
+src/AppBundle/Tests/Controller/UserHasTaskAndSubtaskControllerTest.php
+src/AppBundle/Tests/Controller/UserControllerTest.php
+src/AppBundle/Tests/Controller/TaskControllerTest.php
+src/AppBundle/Tests/Controller/SubtaskControllerTest.php
+var/sessions/prod/sess_p8q330omf3oig1fuerq8dhnnj5
+var/sessions/prod/sess_o278por2nd2hj44dc1c2j0e3j7
+var/sessions/prod/sess_md31k1j0mvm9ogc0gq9f233222
