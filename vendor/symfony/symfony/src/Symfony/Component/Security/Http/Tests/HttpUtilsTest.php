@@ -263,7 +263,7 @@ class HttpUtilsTest extends TestCase
         ;
 
         $utils = new HttpUtils(null, $urlMatcher);
-        $this->assertFalse($utils->checkRequestPath($this->getRequest(), 'path/index.html'));
+        $this->assertFalse($utils->checkRequestPath($this->getRequest(), 'path/list_task.html.twig'));
     }
 
     /**

@@ -216,13 +216,13 @@ class DoctrineCrudGenerator extends Generator
     }
 
     /**
-     * Generates the index.html.twig template in the final bundle.
+     * Generates the list_task.html.twig.twig template in the final bundle.
      *
      * @param string $dir The path to the folder that hosts templates in the bundle
      */
     protected function generateIndexView($dir)
     {
-        $this->renderFile('crud/views/index.html.twig.twig', $dir.'/index.html.twig', array(
+        $this->renderFile('crud/views/list_task.html.twig.twig.twig', $dir.'/list_task.html.twig.twig', array(
             'bundle' => $this->bundle->getName(),
             'entity' => $this->entity,
             'entity_pluralized' => $this->entityPluralized,
@@ -237,13 +237,13 @@ class DoctrineCrudGenerator extends Generator
     }
 
     /**
-     * Generates the show.html.twig template in the final bundle.
+     * Generates the find_user.html.twig template in the final bundle.
      *
      * @param string $dir The path to the folder that hosts templates in the bundle
      */
     protected function generateShowView($dir)
     {
-        $this->renderFile('crud/views/show.html.twig.twig', $dir.'/show.html.twig', array(
+        $this->renderFile('crud/views/find_user.html.twig.twig', $dir.'/find_user.html.twig', array(
             'bundle' => $this->bundle->getName(),
             'entity' => $this->entity,
             'entity_singularized' => $this->entitySingularized,
@@ -256,13 +256,13 @@ class DoctrineCrudGenerator extends Generator
     }
 
     /**
-     * Generates the new.html.twig template in the final bundle.
+     * Generates the create_user.html.twig template in the final bundle.
      *
      * @param string $dir The path to the folder that hosts templates in the bundle
      */
     protected function generateNewView($dir)
     {
-        $this->renderFile('crud/views/new.html.twig.twig', $dir.'/new.html.twig', array(
+        $this->renderFile('crud/views/create_user.html.twig.twig', $dir.'/create_user.html.twig', array(
             'bundle' => $this->bundle->getName(),
             'entity' => $this->entity,
             'entity_singularized' => $this->entitySingularized,
@@ -274,13 +274,13 @@ class DoctrineCrudGenerator extends Generator
     }
 
     /**
-     * Generates the edit.html.twig template in the final bundle.
+     * Generates the edit_user.html.twig template in the final bundle.
      *
      * @param string $dir The path to the folder that hosts templates in the bundle
      */
     protected function generateEditView($dir)
     {
-        $this->renderFile('crud/views/edit.html.twig.twig', $dir.'/edit.html.twig', array(
+        $this->renderFile('crud/views/edit_user.html.twig.twig', $dir.'/edit_user.html.twig', array(
             'route_prefix' => $this->routePrefix,
             'route_name_prefix' => $this->routeNamePrefix,
             'identifier' => $this->metadata->identifier[0],

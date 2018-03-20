@@ -23,10 +23,10 @@ class DoctrineCrudGeneratorTest extends GeneratorTest
             'Controller/PostController.php',
             'Tests/Controller/PostControllerTest.php',
             'Resources/config/routing/post.yml',
-            'Resources/views/post/index.html.twig',
-            'Resources/views/post/show.html.twig',
-            'Resources/views/post/new.html.twig',
-            'Resources/views/post/edit.html.twig',
+            'Resources/views/post/list_task.html.twig.twig',
+            'Resources/views/post/find_user.html.twig',
+            'Resources/views/post/create_user.html.twig',
+            'Resources/views/post/edit_user.html.twig',
         );
         foreach ($files as $file) {
             $this->assertTrue(file_exists($this->tmpDir.'/'.$file), sprintf('%s has been generated', $file));
@@ -60,8 +60,8 @@ class DoctrineCrudGeneratorTest extends GeneratorTest
             'Controller/PostController.php',
             'Tests/Controller/PostControllerTest.php',
             'Resources/config/routing/post.xml',
-            'Resources/views/post/index.html.twig',
-            'Resources/views/post/show.html.twig',
+            'Resources/views/post/list_task.html.twig.twig',
+            'Resources/views/post/find_user.html.twig',
         );
         foreach ($files as $file) {
             $this->assertTrue(file_exists($this->tmpDir.'/'.$file), sprintf('%s has been generated', $file));
@@ -69,8 +69,8 @@ class DoctrineCrudGeneratorTest extends GeneratorTest
 
         $files = array(
             'Resources/config/routing/post.yml',
-            'Resources/views/post/new.html.twig',
-            'Resources/views/post/edit.html.twig',
+            'Resources/views/post/create_user.html.twig',
+            'Resources/views/post/edit_user.html.twig',
         );
         foreach ($files as $file) {
             $this->assertFalse(file_exists($this->tmpDir.'/'.$file), sprintf('%s has not been generated', $file));
@@ -104,10 +104,10 @@ class DoctrineCrudGeneratorTest extends GeneratorTest
         $files = array(
             'Controller/PostController.php',
             'Tests/Controller/PostControllerTest.php',
-            'Resources/views/post/index.html.twig',
-            'Resources/views/post/show.html.twig',
-            'Resources/views/post/new.html.twig',
-            'Resources/views/post/edit.html.twig',
+            'Resources/views/post/list_task.html.twig.twig',
+            'Resources/views/post/find_user.html.twig',
+            'Resources/views/post/create_user.html.twig',
+            'Resources/views/post/edit_user.html.twig',
         );
         foreach ($files as $file) {
             $this->assertTrue(file_exists($this->tmpDir.'/'.$file), sprintf('%s has been generated', $file));
@@ -142,8 +142,8 @@ class DoctrineCrudGeneratorTest extends GeneratorTest
         $files = array(
             'Controller/PostController.php',
             'Tests/Controller/PostControllerTest.php',
-            'Resources/views/post/index.html.twig',
-            'Resources/views/post/show.html.twig',
+            'Resources/views/post/list_task.html.twig.twig',
+            'Resources/views/post/find_user.html.twig',
         );
         foreach ($files as $file) {
             $this->assertTrue(file_exists($this->tmpDir.'/'.$file), sprintf('%s has been generated', $file));
@@ -152,8 +152,8 @@ class DoctrineCrudGeneratorTest extends GeneratorTest
         $files = array(
             'Resources/config/routing/post.yml',
             'Resources/config/routing/post.xml',
-            'Resources/views/post/new.html.twig',
-            'Resources/views/post/edit.html.twig',
+            'Resources/views/post/create_user.html.twig',
+            'Resources/views/post/edit_user.html.twig',
         );
         foreach ($files as $file) {
             $this->assertFalse(file_exists($this->tmpDir.'/'.$file), sprintf('%s has not been generated', $file));
@@ -189,10 +189,10 @@ class DoctrineCrudGeneratorTest extends GeneratorTest
         $files = array(
             'Controller/Blog/PostController.php',
             'Tests/Controller/Blog/PostControllerTest.php',
-            'Resources/views/blog/post/index.html.twig',
-            'Resources/views/blog/post/show.html.twig',
-            'Resources/views/blog/post/new.html.twig',
-            'Resources/views/blog/post/edit.html.twig',
+            'Resources/views/blog/post/list_task.html.twig.twig',
+            'Resources/views/blog/post/find_user.html.twig',
+            'Resources/views/blog/post/create_user.html.twig',
+            'Resources/views/blog/post/edit_user.html.twig',
         );
         foreach ($files as $file) {
             $this->assertTrue(file_exists($this->tmpDir.'/'.$file), sprintf('%s has been generated', $file));
