@@ -57,20 +57,20 @@ class TemplateNameParserTest extends TestCase
     public function parseProvider()
     {
         return array(
-            array('FooBundle:Post:list_task.html.twig.php', 'FooBundle:Post:list_task.html.twig.php', '@FooBundle/Resources/views/Post/list_task.html.twig.php', new TemplateReference('FooBundle', 'Post', 'index', 'html', 'php')),
-            array('FooBundle:Post:list_task.html.twig.twig', 'FooBundle:Post:list_task.html.twig.twig', '@FooBundle/Resources/views/Post/list_task.html.twig.twig', new TemplateReference('FooBundle', 'Post', 'index', 'html', 'twig')),
+            array('FooBundle:Post:index.html.php', 'FooBundle:Post:index.html.php', '@FooBundle/Resources/views/Post/index.html.php', new TemplateReference('FooBundle', 'Post', 'index', 'html', 'php')),
+            array('FooBundle:Post:index.html.twig', 'FooBundle:Post:index.html.twig', '@FooBundle/Resources/views/Post/index.html.twig', new TemplateReference('FooBundle', 'Post', 'index', 'html', 'twig')),
             array('FooBundle:Post:index.xml.php', 'FooBundle:Post:index.xml.php', '@FooBundle/Resources/views/Post/index.xml.php', new TemplateReference('FooBundle', 'Post', 'index', 'xml', 'php')),
-            array('SensioFooBundle:Post:list_task.html.twig.php', 'SensioFooBundle:Post:list_task.html.twig.php', '@SensioFooBundle/Resources/views/Post/list_task.html.twig.php', new TemplateReference('SensioFooBundle', 'Post', 'index', 'html', 'php')),
-            array('SensioCmsFooBundle:Post:list_task.html.twig.php', 'SensioCmsFooBundle:Post:list_task.html.twig.php', '@SensioCmsFooBundle/Resources/views/Post/list_task.html.twig.php', new TemplateReference('SensioCmsFooBundle', 'Post', 'index', 'html', 'php')),
-            array(':Post:list_task.html.twig.php', ':Post:list_task.html.twig.php', 'views/Post/list_task.html.twig.php', new TemplateReference('', 'Post', 'index', 'html', 'php')),
-            array('::list_task.html.twig.php', '::list_task.html.twig.php', 'views/list_task.html.twig.php', new TemplateReference('', '', 'index', 'html', 'php')),
-            array('list_task.html.twig.php', '::list_task.html.twig.php', 'views/list_task.html.twig.php', new TemplateReference('', '', 'index', 'html', 'php')),
-            array('FooBundle:Post:foo.bar.list_task.html.twig.php', 'FooBundle:Post:foo.bar.list_task.html.twig.php', '@FooBundle/Resources/views/Post/foo.bar.list_task.html.twig.php', new TemplateReference('FooBundle', 'Post', 'foo.bar.index', 'html', 'php')),
+            array('SensioFooBundle:Post:index.html.php', 'SensioFooBundle:Post:index.html.php', '@SensioFooBundle/Resources/views/Post/index.html.php', new TemplateReference('SensioFooBundle', 'Post', 'index', 'html', 'php')),
+            array('SensioCmsFooBundle:Post:index.html.php', 'SensioCmsFooBundle:Post:index.html.php', '@SensioCmsFooBundle/Resources/views/Post/index.html.php', new TemplateReference('SensioCmsFooBundle', 'Post', 'index', 'html', 'php')),
+            array(':Post:index.html.php', ':Post:index.html.php', 'views/Post/index.html.php', new TemplateReference('', 'Post', 'index', 'html', 'php')),
+            array('::index.html.php', '::index.html.php', 'views/index.html.php', new TemplateReference('', '', 'index', 'html', 'php')),
+            array('index.html.php', '::index.html.php', 'views/index.html.php', new TemplateReference('', '', 'index', 'html', 'php')),
+            array('FooBundle:Post:foo.bar.index.html.php', 'FooBundle:Post:foo.bar.index.html.php', '@FooBundle/Resources/views/Post/foo.bar.index.html.php', new TemplateReference('FooBundle', 'Post', 'foo.bar.index', 'html', 'php')),
             array('@FooBundle/Resources/views/layout.html.twig', '@FooBundle/Resources/views/layout.html.twig', '@FooBundle/Resources/views/layout.html.twig', new BaseTemplateReference('@FooBundle/Resources/views/layout.html.twig', 'twig')),
             array('@FooBundle/Foo/layout.html.twig', '@FooBundle/Foo/layout.html.twig', '@FooBundle/Foo/layout.html.twig', new BaseTemplateReference('@FooBundle/Foo/layout.html.twig', 'twig')),
             array('name.twig', 'name.twig', 'name.twig', new BaseTemplateReference('name.twig', 'twig')),
             array('name', 'name', 'name', new BaseTemplateReference('name')),
-            array('default/list_task.html.twig.php', '::default/list_task.html.twig.php', 'views/default/list_task.html.twig.php', new TemplateReference(null, null, 'default/index', 'html', 'php')),
+            array('default/index.html.php', '::default/index.html.php', 'views/default/index.html.php', new TemplateReference(null, null, 'default/index', 'html', 'php')),
         );
     }
 
@@ -79,7 +79,7 @@ class TemplateNameParserTest extends TestCase
      */
     public function testParseValidNameWithNotFoundBundle()
     {
-        $this->parser->parse('BarBundle:Post:list_task.html.twig.php');
+        $this->parser->parse('BarBundle:Post:index.html.php');
     }
 
     /**
@@ -99,7 +99,7 @@ class TemplateNameParserTest extends TestCase
     public function provideAbsolutePaths()
     {
         return array(
-            array('/path/to/section/list_task.html.twig.php', '/path/to/section/list_task.html.twig.php', '/path/to/section/list_task.html.twig.php', new BaseTemplateReference('/path/to/section/list_task.html.twig.php', 'php')),
+            array('/path/to/section/index.html.php', '/path/to/section/index.html.php', '/path/to/section/index.html.php', new BaseTemplateReference('/path/to/section/index.html.php', 'php')),
             array('C:\\path\\to\\section\\name.html.php', 'C:path/to/section/name.html.php', 'C:path/to/section/name.html.php', new BaseTemplateReference('C:path/to/section/name.html.php', 'php')),
             array('C:\\path\\to\\section\\name:foo.html.php', 'C:path/to/section/name:foo.html.php', 'C:path/to/section/name:foo.html.php', new BaseTemplateReference('C:path/to/section/name:foo.html.php', 'php')),
             array('\\path\\to\\section\\name.html.php', '/path/to/section/name.html.php', '/path/to/section/name.html.php', new BaseTemplateReference('/path/to/section/name.html.php', 'php')),

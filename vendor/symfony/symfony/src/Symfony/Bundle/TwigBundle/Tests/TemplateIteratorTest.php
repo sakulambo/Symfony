@@ -31,8 +31,8 @@ class TemplateIteratorTest extends TestCase
         sort($sorted);
         $this->assertEquals(
             array(
-                '@Bar/list_task.html.twig.twig',
-                '@Foo/list_task.html.twig.twig',
+                '@Bar/index.html.twig',
+                '@Foo/index.html.twig',
                 'layout.html.twig',
                 'sub/sub.html.twig',
             ),
