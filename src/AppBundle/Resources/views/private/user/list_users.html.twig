@@ -35,6 +35,8 @@
                               <tr>
                                 <th>Id</th>
                                 <th>Name</th>
+                                <th>create</th>
+                                <th>update</th>
                                 <th class="col-md-2">Actions</th>
                               </tr>
                             </thead>
@@ -43,6 +45,8 @@
                               <tr>
                                 <td>{{ user.id }} </td>
                                 <td>{{ user.name }}</td>
+                                <td>{{ user.createdAt |date }}</td>
+                                <td>{{ user.updatedAt |date }}</td>
                                 <td style=" padding: 5px 5px 5px 5px;">
                                   <div class="col-md-12">
                                     <button type="submit" class="col-md-6 button_edit"><a style="text-decoration: none;color: #ffffff;" href="{{ path('user_edit',{'id': user.id })}}">Edit</a></button>

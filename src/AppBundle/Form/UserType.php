@@ -31,6 +31,7 @@ class UserType extends AbstractType
                     'class' => 'form-control'
                 )
             ))
+
             ->add('save', SubmitType::class, array(
                 'attr' => array('class' => 'btn btn-success form-control'),
             ));
