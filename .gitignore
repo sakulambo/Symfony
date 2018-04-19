@@ -75,3 +75,6 @@ src/AppBundle/Tests/Controller/SubtaskControllerTest.php
 var/sessions/prod/sess_p8q330omf3oig1fuerq8dhnnj5
 var/sessions/prod/sess_o278por2nd2hj44dc1c2j0e3j7
 var/sessions/prod/sess_md31k1j0mvm9ogc0gq9f233222
+var/sessions/prod/sess_9sm3kchekn1kka9mn2jj493pq4
+var/sessions/dev/sess_ue6ijdrp0j8hbsdim4e8ji50h3
+var/sessions/dev/sess_9sm3kchekn1kka9mn2jj493pq4
